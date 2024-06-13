@@ -1,0 +1,115 @@
+
+board_name CCRCF435FC
+manufacturer_id 
+
+# name: -
+
+# resources
+resource BEEPER 1 C15
+resource MOTOR 1 B06
+resource MOTOR 2 B07
+resource MOTOR 3 A03
+resource MOTOR 4 B01
+resource LED_STRIP 1 A08
+resource SERIAL_TX 1 A09
+resource SERIAL_TX 2 A02
+resource SERIAL_TX 3 B11
+resource SERIAL_TX 5 B09
+resource SERIAL_TX 7 B04
+resource SERIAL_RX 1 A10
+resource SERIAL_RX 2 B00
+resource SERIAL_RX 3 B10
+resource SERIAL_RX 5 B08
+resource SERIAL_RX 7 B03
+resource I2C_SCL 2 H02
+resource I2C_SDA 2 H03
+resource LED 1 C13
+resource LED 2 C14
+resource SPI_SCK 1 A05
+resource SPI_SCK 2 B13
+resource SPI_SDI 1 A06
+resource SPI_SDI 2 B14
+resource SPI_SDO 1 A07
+resource SPI_SDO 2 B15
+resource ADC_BATT 1 A00
+resource ADC_CURR 1 A01
+resource FLASH_CS 1 B05
+resource OSD_CS 1 B12
+resource GYRO_EXTI 1 A15
+resource GYRO_CS 1 A04
+
+# timer
+timer A08 AF1
+# pin A08: TIM1 CH1 (AF1)
+timer B06 AF2
+# pin B06: TIM4 CH1 (AF2)
+timer B07 AF2
+# pin B07: TIM4 CH2 (AF2)
+timer A03 AF1
+# pin A03: TIM2 CH4 (AF1)
+timer B01 AF2
+# pin B01: TIM3 CH4 (AF2)
+
+# dma
+dma ADC 1 11
+# ADC 1: DMA2 Channel 0 Channel 5
+dma pin A08 7
+# pin A08: DMA2 Channel 0 Channel 42
+dma pin B06 0
+# pin B06: DMA1 Channel 0 Channel 67
+dma pin B07 1
+# pin B07: DMA1 Channel 0 Channel 68
+dma pin A03 2
+# pin A03: DMA1 Channel 0 Channel 59
+dma pin B01 3
+# pin B01: DMA1 Channel 0 Channel 64
+
+# feature
+feature -RX_PPM
+feature -INFLIGHT_ACC_CAL
+feature -RX_SERIAL
+feature -MOTOR_STOP
+feature -SERVO_TILT
+feature -SOFTSERIAL
+feature -GPS
+feature -RANGEFINDER
+feature -TELEMETRY
+feature -3D
+feature -RX_PARALLEL_PWM
+feature -RX_MSP
+feature -RSSI_ADC
+feature -LED_STRIP
+feature -DISPLAY
+feature -OSD
+feature -CHANNEL_FORWARDING
+feature -TRANSPONDER
+feature -AIRMODE
+feature -RX_SPI
+feature -ESC_SENSOR
+feature -ANTI_GRAVITY
+feature RX_SERIAL
+feature SOFTSERIAL
+feature TELEMETRY
+feature LED_STRIP
+feature OSD
+feature AIRMODE
+feature ANTI_GRAVITY
+
+# master
+set mag_bustype = I2C
+set mag_i2c_device = 2
+set baro_bustype = I2C
+set baro_i2c_device = 2
+set baro_hardware = DPS310
+set motor_pwm_protocol = DSHOT600
+set serialrx_provider = CRSF
+set gyro_1_bustype = SPI
+set gyro_1_spibus = 1
+set gyro_1_sensor_align = CW270
+set osd_displayport_device = AUTO
+set vcd_video_system = AUTO
+set max7456_spi_bus = 2
+set blackbox_device = SPIFLASH
+set flash_spi_bus = 2
+
+save
